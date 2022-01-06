@@ -4,4 +4,8 @@
     $user       = 'root';                                   // USER
     $password   = '';                                       // PASSWORD
 
-    $con = new PDO($dsn, $user, $password); // CONECTION PDO
+    try {
+        $con = new PDO($dsn, $user, $password); // CONECTION PDO
+    } catch (PDOException $ex) {
+        echo 'Erro: ' . $ex->getCode() . ' Mensagem: ' . $ex->getMessage(); // MENSAGEM DE ERRO 
+    }
