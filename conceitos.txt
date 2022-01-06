@@ -1,0 +1,6 @@
+INTRODUÇÃO PDO - Conjunto de objetos que ajudam o PHP se conectar com banco de dados
+
+PHP 5.1 >>>
+
+um tipo de configuração para cada tipo de sgbd
+
