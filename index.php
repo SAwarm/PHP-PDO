@@ -6,6 +6,36 @@
 
     try {
         $con = new PDO($dsn, $user, $password); // CONECTION PDO
+
+        $query = '
+            CREATE TABLE IF NOT EXISTS tb_usuarios
+            (
+                id int not null primary key auto_increment,
+                nome varchar(50) not null,
+                email varchar(100) not null,
+                senha varchar(32) not null
+            )
+        ';
+
+        $con->exec($query);
+
+        $query = '
+            INSERT INTO tb_usuarios
+            (
+                nome,
+                email,
+                senha
+            )
+            VALUES
+            (
+                "Jonas",
+                "jonas@gmail.com",
+                "password"
+            )
+        ';
+
+        $con->exec($query);
+
     } catch (PDOException $ex) {
         echo 'Erro: ' . $ex->getCode() . ' Mensagem: ' . $ex->getMessage(); // MENSAGEM DE ERRO 
     }
