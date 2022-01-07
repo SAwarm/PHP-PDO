@@ -7,7 +7,7 @@
     try {
         $con = new PDO($dsn, $user, $password); // CONECTION PDO
 
-        $query = '
+        /*$query = '
             CREATE TABLE IF NOT EXISTS tb_usuarios
             (
                 id int not null primary key auto_increment,
@@ -17,9 +17,9 @@
             )
         ';
 
-        $con->exec($query);
+        $con->exec($query);*/
 
-        $query = '
+        /*$query = '
             INSERT INTO tb_usuarios
             (
                 nome,
@@ -32,9 +32,18 @@
                 "jonas@gmail.com",
                 "password"
             )
-        ';
+        ';*/
 
-        $con->exec($query);
+        $query = 'SELECT * FROM tb_usuarios';
+        
+        $stmt = $con->query($query);
+        $list = $stmt->fetchAll();
+
+        echo '<pre>';
+        print_r($list);
+        echo '</pre>';
+
+        print_r($list[0]['nome']);
 
     } catch (PDOException $ex) {
         echo 'Erro: ' . $ex->getCode() . ' Mensagem: ' . $ex->getMessage(); // MENSAGEM DE ERRO 
