@@ -9,7 +9,7 @@
             $con = new PDO($dsn, $user, $password); // CONECTION PDO
 
             /**
-             * NÃO SEGURO
+             * NOT SAFE
              */
             /*$query = "SELECT * FROM tb_usuarios where ";
             $query .= " email= '{$_POST['usuario']}}' ";
